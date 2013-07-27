@@ -52,7 +52,7 @@
 {block name="frontend_index_header_javascript_jquery_lib"}
 
     {* Grab Google CDN's jQuery, with a protocol relative URL *}
-    <script src="{link file='frontend/_resources/javascript/jquery-1.7.2.min.js'}"></script>
+    <script type="text/javascript" src="{link file='frontend/_resources/javascript/jquery-1.7.2.min.js'}"></script>
 {/block}
 
 {block name="frontend_index_header_javascript"}
