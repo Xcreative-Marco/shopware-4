@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
 jQuery(document).ready(function($) {
     var cok = document.cookie.match(/session-{$Shop->getId()}=([^;])+/g),
         sid = (cok && cok[0]) ? cok[0] : null,
@@ -10,14 +10,14 @@ jQuery(document).ready(function($) {
         pth = document.location.pathname.replace("{url controller=index fullPath=false}", "/");
     url += url.indexOf('?') === -1 ? '?' : '&';
     url += 'requestPage=' + encodeURI(pth);
-    url += '&requestController=' + encodeURI("{$Controller|escape}");
+    url += '&amp;requestController=' + encodeURI("{$Controller|escape}");
     if(sid) { url += '&' + sid; }
-    if(pid) { url += '&partner=' + pid; }
-    if(ref) { url += '&referer=' + encodeURI(ref); }
+    if(pid) { url += '&amp;partner=' + pid; }
+    if(ref) { url += '&amp;referer=' + encodeURI(ref); }
 {if $sArticle.articleID}
-    url += '&articleId=' + encodeURI("{$sArticle.articleID}");
+    url += '&amp;articleId=' + encodeURI("{$sArticle.articleID}");
 {/if}
-    //url += '&x-shopware-nocache=' + (new Date()).getTime();
+    //url += '&amp;x-shopware-nocache=' + (new Date()).getTime();
     $.ajax({ url: url, dataType: 'jsonp'});
 });
 </script>
